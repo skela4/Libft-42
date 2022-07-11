@@ -16,8 +16,8 @@
 * @file ft_toupper.c
 * @brief toupper -- lower case to upper case letter conversion.
 * 
-* normal way : (c >= 'a' && c <= 'z') ? c -= 32 ? c;
-* Bitwise way : c ^= 0xdf;
+* normal way : (c >= 'a' && c <= 'z') ? c -= 32 : c;
+* Bitwise way : c & 0x5f;
 * @see man 3 toupper
 *
 * @param c 
@@ -29,5 +29,5 @@
 */
 int ft_toupper(int c)
 {
-    return (c ^= 0xdf;);
+    return (c & 0x5f);
 }
