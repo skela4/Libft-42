@@ -6,15 +6,19 @@
 /*   By: aahizi-e <aahizi-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 03:13:33 by aahizi-e          #+#    #+#             */
-/*   Updated: 2022/07/10 03:40:16 by aahizi-e         ###   ########.fr       */
+/*   Updated: 2022/07/12 00:51:47 by aahizi-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H_
-# define _LIBFT_H_
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <stddef.h>
 
 size_t  ft_strlen(const char *s);
+
+int	ft_tolower(int c);
+
+int ft_toupper(int c);
 
 #endif
