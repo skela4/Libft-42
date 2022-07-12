@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stddef.h>
 
 /**
 * @file ft_calloc.c
@@ -32,21 +33,19 @@ void *ft_calloc(size_t nmemb, size_t size)
     char            *memory;
 
     i = 0; 
-    nbytes = 0;
-    nbytes -= 1;
-    memory = (void *)0;
-    if (nmemb == 0 || size == 0)
-        return (malloc(0));
-    if (nbytes / size < nmemb)
+    nbytes = (size_t)-1;
+    memory = NULL;
+    if (nmemb == 0 || size == 0 || nbytes / size < nmemb)
         return (memory);
     nbytes = size * nmemb; 
     memory = malloc(nbytes);
-    if (memory == (void *)0)
-        return (memory);
-    while (i < nbytes)
+    if (memory)
     {
-        *(memory + i) = '\0';
-        ++i;
+        while (i < nbytes)
+        {
+            *(memory + i) = '\0';
+            ++i;
+        }
     }
     return (memory);
 }
