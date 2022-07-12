@@ -8,6 +8,7 @@ CFLAGS += -Werror -Werror=format-security -Werror=implicit-function-declaration
 SRCS = ft_strlen.c\
 	   ft_tolower.c\
 	   ft_toupper.c\
+	   ft_atoi.c\
 
 OBJS = $(SRCS:.c=.o)
 
@@ -27,7 +28,7 @@ fclean: clean
 re: fclean all
 
 test:
-	@$(CC) $(CFLAGS) main.c $(NAME) && ./a.out
+	@$(CC) -lm $(CFLAGS) main.c $(NAME) && ./a.out
 
 #  DEBUG:
 #  clang -g3 -fsanitize=address -std=c89 -Wall -Wextra -Wvla -Wconversion
