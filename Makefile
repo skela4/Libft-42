@@ -12,14 +12,15 @@ SRCS = ft_strlen.c\
 	   ft_bzero.c\
 	   ft_memset.c\
 	   ft_calloc.c\
+	   ft_isalnum.c\
 
 OBJS = $(SRCS:.c=.o)
+
+all: $(NAME)
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
 	gcc -nostartfiles -shared -o libft.so $(OBJS)
-
-all: $(NAME)
 
 $(NAME):
 	@$(CC) $(CFLAGS) -c $(SRCS)
