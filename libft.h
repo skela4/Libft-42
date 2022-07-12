@@ -15,6 +15,14 @@
 
 # include <stddef.h>
 
+typedef	enum
+{
+		false,
+		true
+}		bool_t;
+
+
+typedef	unsigned char	byte_t;
 
 size_t  ft_strlen(const char *s);
 
