@@ -6,7 +6,7 @@
 /*   By: aahizi-e <aahizi-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 04:24:39 by aahizi-e          #+#    #+#             */
-/*   Updated: 2022/07/12 00:58:34 by aahizi-e         ###   ########.fr       */
+/*   Updated: 2022/07/12 03:12:01 by aahizi-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 * @file ft_tolower.c
 * @brief tolower -- upper case to lower case letter conversion.
 * 
-* normal way : (c >= 'A' && c <= 'Z') ? c += 32 : c;
-* Bitwise way : c | 0x20;
 * @see man 3 tolower
 *
 * @param c 
@@ -30,5 +28,5 @@
 
 int	ft_tolower(int c)
 {
-	return (c | 0x20);
+	return ((c >= 'A' && c <= 'Z') ? c + 32 : c);
 }

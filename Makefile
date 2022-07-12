@@ -13,6 +13,9 @@ SRCS = ft_strlen.c\
 	   ft_memset.c\
 	   ft_calloc.c\
 	   ft_isalnum.c\
+	   ft_isalpha.c\
+	   ft_isascii.c\
+
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: aahizi-e <aahizi-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 03:13:33 by aahizi-e          #+#    #+#             */
-/*   Updated: 2022/07/12 05:13:32 by aahizi-e         ###   ########.fr       */
+/*   Updated: 2022/07/12 05:21:58 by aahizi-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,9 @@ void	*ft_memset(void *b, int c, size_t len);
 void    *ft_calloc(size_t nmemb, size_t size);
 
 int     ft_isalnum(int c);
+
+int     ft_isalpha(int c);
+
+int     ft_isascii(int c);
+
 #endif

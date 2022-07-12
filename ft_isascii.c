@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aahizi-e <aahizi-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 01:23:17 by aleks             #+#    #+#             */
-/*   Updated: 2022/07/12 03:18:05 by aahizi-e         ###   ########.fr       */
+/*   Created: 2022/07/12 05:20:54 by aahizi-e          #+#    #+#             */
+/*   Updated: 2022/07/12 05:25:58 by aahizi-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /**
-* @file ft_toupper.c
-* @brief toupper -- lower case to upper case letter conversion.
+* @file ft_isascii.c
+* @brief ft_isascii - checks whether c is a 7-bit unsigned char value
+*                   that fits into the ASCII character set.
 * 
-* @see man 3 toupper
+* @see man 3 isascii
 *
-* @param c 
-* 	Must be representable as an unsigned char or the value of EOF.
+* @param int c
 *
 * @return 
-* 	If the argument is a lowercase character, returns the uppercase version;
-*   otherwise, just returns the original argument.
+* 	The values returned are nonzero if the character c falls into the
+*   tested class, and zero if not.
 */
-int ft_toupper(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
-    return ((c >= 'a' && c <= 'z') ? c - 32 : c);
+	return (c >= 0 && c <= 127);
 }
