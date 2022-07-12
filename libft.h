@@ -6,7 +6,7 @@
 /*   By: aahizi-e <aahizi-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 03:13:33 by aahizi-e          #+#    #+#             */
-/*   Updated: 2022/07/12 05:21:58 by aahizi-e         ###   ########.fr       */
+/*   Updated: 2022/07/13 00:56:20 by aahizi-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int     ft_isalnum(int c);
 int     ft_isalpha(int c);
 
 int     ft_isascii(int c);
+
+int		ft_isdigit(int c);
 
 #endif
