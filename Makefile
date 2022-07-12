@@ -9,8 +9,15 @@ SRCS = ft_strlen.c\
 	   ft_tolower.c\
 	   ft_toupper.c\
 	   ft_atoi.c\
+	   ft_bzero.c\
+	   ft_memset.c\
+	   ft_calloc.c\
 
 OBJS = $(SRCS:.c=.o)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 all: $(NAME)
 
