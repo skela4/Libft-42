@@ -17,7 +17,38 @@
 #include <math.h> /* ceil, log10 */
 #include <string.h> /* strcmp, strncmp */
 #include <stdint.h> /* strcmp, strncmp */
+#include <stddef.h> /* strcmp, strncmp */
 
+
+__attribute__((unused)) static int _calloc(char const *progname)
+{
+	int				*p;
+	size_t			i;
+	const size_t	cnt = 16;
+
+	printf("%s: Testing ft_calloc()\n", progname);
+	if(ft_calloc(SIZE_MAX, 2) != NULL || ft_calloc(2, SIZE_MAX) != NULL)
+	{
+		printf("ft_calloc() failed to detect overflow\n");
+		return 0;
+	}
+	if((p = ft_calloc(sizeof(int), cnt)) == NULL)
+	{
+		printf("ft_calloc() failed to allocate memory\n");
+		return 0;
+	}
+	for(i = 0; i < cnt; i++)
+    {
+		if(p[i] != 0)
+		{
+			printf("ft_calloc() failed to clear memory\n");
+			return 0;
+		}
+    }
+	free(p);
+    p = NULL;
+	return 1;
+}
 
 __attribute__((unused)) static int ft_atoi_test(void)
 {
@@ -29,23 +60,23 @@ __attribute__((unused)) static int ft_atoi_test(void)
     if (ft_atoi(str) != atoi(str))
     {
         printf("KO!!!!");
-        return (EXIT_FAILURE);
+        return (0);
     }
     while (i < INT_MAX)
     {
         if (ft_atoi(str) != atoi(str))
         {
             printf("KO!!!!");
-            return (EXIT_FAILURE);
+            return (0);
         }
         ++i;
     }
     if (ft_atoi(str) != atoi(str))
     {
         printf("KO!!!!");
-        return (EXIT_FAILURE);
+        return (0);
     }
-    return (EXIT_FAILURE);
+    return (1);
 }
 
 
