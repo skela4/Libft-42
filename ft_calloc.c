@@ -6,7 +6,7 @@
 /*   By: aahizi-e <aahizi-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 03:18:18 by aahizi-e          #+#    #+#             */
-/*   Updated: 2022/07/12 04:22:05 by aahizi-e         ###   ########.fr       */
+/*   Updated: 2022/07/13 03:29:10 by aahizi-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,26 @@
 * 	NULL on failed or an allocated pointer.
 */
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    register size_t i;
-    register size_t nbytes;
-    char            *memory;
+	register size_t	i;
+	register size_t	nbytes;
+	byte_t			*memory;
 
-    i = 0; 
-    nbytes = (size_t)-1;
-    memory = NULL;
-    if (nmemb == 0 || size == 0 || nbytes / size < nmemb)
-        return (memory);
-    nbytes = size * nmemb; 
-    memory = malloc(nbytes);
-    if (memory)
-    {
-        while (i < nbytes)
-        {
-            *(memory + i) = '\0';
-            ++i;
-        }
-    }
-    return (memory);
+	i = 0;
+	nbytes = (size_t)-1;
+	memory = NULL;
+	if (nmemb == 0 || size == 0 || nbytes / size < nmemb)
+		return (memory);
+	nbytes = size * nmemb;
+	memory = malloc(nbytes);
+	if (memory)
+	{
+		while (i < nbytes)
+		{
+			*(memory + i) = '\0';
+			++i;
+		}
+	}
+	return (memory);
 }
