@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aahizi-e <aahizi-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/13 01:18:18 by aahizi-e          #+#    #+#             */
-/*   Updated: 2022/07/13 02:08:31 by aahizi-e         ###   ########.fr       */
+/*   Created: 2022/07/13 01:55:14 by aahizi-e          #+#    #+#             */
+/*   Updated: 2022/07/13 02:14:57 by aahizi-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-* @file ft_memchr.c
-* @brief ft_memchr - scan memory for a character
+* @file ft_memcmp.c
+* @brief ft_memcmp - compare memory areas
 * 
-* @see man 3 memchr
+* @see man 3 memcmp
 *
-* @param const void *s, int c, size_t n
+* @param const void *s1, const void *s2, size_t n
 *
 * @return 
-* 	The  memchr()  and memrchr() functions return a pointer to the matching
-*   byte or NULL if the character does not occur in the given memory area.
+* 	The memcmp() return  an integer less than, e 
 */
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	byte_t	bit;
-	byte_t	*memory;
+	byte_t	*mem1;
+	byte_t	*mem2;
 
-	bit = (byte_t)c;
-	memory = (byte_t *)s;
+	mem1 = (byte_t *)s1;
+	mem2 = (byte_t *)s2;
 	while (n)
 	{
-		if (*memory == bit)
-			return (memory);
+		if (*mem1 != *mem2)
+			return (*mem1 - *mem2);
 		--n;
-		++memory;
+		++mem1;
+		++mem2;
 	}
-	return (NULL);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aahizi-e <aahizi-e@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 03:13:33 by aahizi-e          #+#    #+#             */
-/*   Updated: 2022/07/13 01:17:08 by aahizi-e         ###   ########.fr       */
+/*   Updated: 2022/07/13 02:10:03 by aahizi-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,9 @@ int     ft_isascii(int c);
 int		ft_isdigit(int c);
 
 int		ft_isprint(int c);
+
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif
